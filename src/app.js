@@ -20,9 +20,9 @@ app.get('/articles', (req, res, next) => {
     const knexInstance = req.app.get('db');
     ArticleService.getAllArticles(knexInstance)
         .then(articles => {
-            //console.log(articles);
+            console.log("list of articles", articles);
             res.json(articles.map(article => 
-            console.log(article)
+            //console.log(article)
             ({
                 id: article.id,
                 title: article.title,
